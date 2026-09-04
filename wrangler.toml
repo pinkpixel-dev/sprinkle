@@ -1,0 +1,31 @@
+name = "sprinkle"
+main = "worker/index.ts"
+compatibility_date = "2026-09-01"
+
+# The built React app is served straight from the Worker.
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+[observability]
+enabled = true
+
+# Research cache and rate-limit counters.
+# `wrangler dev` uses local simulated storage, so no preview_id is needed.
+# If you ever want `wrangler dev --remote` to hit a real namespace, run
+#   wrangler kv namespace create SPRINKLE_CACHE --preview
+# and add the printed id here as preview_id.
+[[kv_namespaces]]
+binding = "SPRINKLE_CACHE"
+id = "4fd6403c4fce48ada1ec3a82a9e5f56d"
+
+[vars]
+GEMINI_RESEARCH_MODEL = "gemini-3.7-flash"
+GEMINI_PARSE_MODEL = "gemini-3.5-flash-lite"
+MAX_ORGS_RESEARCHED = "8"
+RATE_LIMIT_SECONDS = "30"
+
+# GEMINI_API_KEY is a secret, never a var:
+#   wrangler secret put GEMINI_API_KEY
+# For local dev put it in .dev.vars (git-ignored).

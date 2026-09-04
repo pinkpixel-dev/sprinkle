@@ -1,0 +1,2 @@
+# Copy to .dev.vars and fill in. .dev.vars is git-ignored.
+GEMINI_API_KEY=your-gemini-api-key-here

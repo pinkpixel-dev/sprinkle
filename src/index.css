@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  /* Warm paper palette, pulled from the Sprinkle mark. */
+  --color-cream: oklch(97.5% 0.014 76);
+  --color-paper: oklch(99.2% 0.006 80);
+  --color-sand: oklch(93.5% 0.022 74);
+  --color-edge: oklch(88% 0.028 66);
+
+  --color-ink: oklch(31% 0.038 48);
+  --color-ink-soft: oklch(46% 0.032 50);
+  --color-ink-faint: oklch(61% 0.026 55);
+
+  --color-coral: oklch(66% 0.155 32);
+  --color-coral-deep: oklch(54% 0.152 32);
+  --color-coral-wash: oklch(95% 0.028 34);
+
+  --color-blush: oklch(78% 0.088 15);
+  --color-blush-wash: oklch(96% 0.022 15);
+
+  --color-kraft: oklch(76% 0.072 68);
+  --color-kraft-wash: oklch(95% 0.026 72);
+
+  --color-leaf: oklch(58% 0.104 152);
+  --color-leaf-wash: oklch(95% 0.03 152);
+
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-sans: 'Figtree', ui-sans-serif, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  --radius-card: 1.125rem;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    /* Faint paper grain so the large cream areas are not dead flat. */
+    background-image:
+      radial-gradient(circle at 1px 1px, oklch(84% 0.03 66 / 0.22) 1px, transparent 0);
+    background-size: 26px 26px;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+  }
+
+  /* Never remove the ring, and never animate it in. */
+  :focus-visible {
+    outline: 2px solid var(--color-coral-deep);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-coral-wash);
+  }
+}
+
+@layer components {
+  .card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-edge);
+    border-radius: var(--radius-card);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
