@@ -10,6 +10,8 @@ Sprinkle is a small web app that answers one question: *I have this stuff, who n
 
 You type what you want to donate in plain language, give it a ZIP code, and it goes looking. It finds local organizations, reads their donation pages, pulls out what they accept and what they refuse, checks whether they have a current needs list, and matches that against your items. Every claim comes back with a confidence label and the links it used, so you can check the work yourself.
 
+**Try it:** [sprinkle.pinkpixel.dev](https://sprinkle.pinkpixel.dev)
+
 ## Why this exists
 
 Donating things is more annoying than it should be. Different places take different items, some only want certain things at certain times, and current needs are usually buried on a website, a Facebook post, or a wish list nobody links to. So people either drive around guessing or give up and throw good things away.
@@ -32,7 +34,13 @@ No account. No email. No home address. A ZIP code is enough.
 
 ## Screenshots
 
-<!-- TODO: Add screenshots of the search form and a results page. -->
+### Start a search
+
+![Sprinkle homepage with fields for a location and donation description](https://res.cloudinary.com/di7ctlowx/image/upload/v1788549086/Screenshot_2026-09-04_15-08-17_x4ai63.png)
+
+### Review the matches
+
+![Sample Sprinkle results with researched organizations, item matches, verification labels, and source links](https://res.cloudinary.com/di7ctlowx/image/upload/v1788549086/Screenshot_2026-09-04_15-10-49_gcombm.png)
 
 ## How it works
 
